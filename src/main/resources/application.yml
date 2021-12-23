@@ -1,0 +1,16 @@
+spring:
+  redis:
+    database: 0
+    cluster:
+      nodes: 192.168.6.118:7000,192.168.6.118:7001,192.168.6.118:7002,192.168.6.118:7003,192.168.6.118:7004,192.168.6.118:7005
+    lettuce:
+      cluster:
+        refresh:
+          adaptive: true
+          period: 5000
+      pool:
+        max-active: 10  #连接池最大连接数
+        max-idle: 8     #连接池中最大空闲连接数
+        max-wait: -1ms  #连接池最大等待阻塞时间
+        min-idle: 0     #连接池中最小空闲数
+    timeout: 8000      #访问超时时间
